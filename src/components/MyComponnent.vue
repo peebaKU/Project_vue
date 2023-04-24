@@ -1,7 +1,7 @@
 <template>
     <div id="content">
         <h1>My Component</h1>
-        <p>my component {{myPropertyName}}</p>
+        <p>ชื่อ {{Name}} อายุ {{age}}</p>
     </div>
 </template>
 
@@ -13,7 +13,8 @@ export default {
 name: 'MyComponnent',
 data() {
   return {
-    myPropertyName:"BARAMEE"
+    Name:"BARAMEE",
+    age: 20,
   }  
 },       
 
