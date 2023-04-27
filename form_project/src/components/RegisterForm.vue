@@ -138,7 +138,7 @@ export default {
     checkValidator(value, rule) {
       let valid = true;
       let message = "";
-      if (valid.trim().length === 0 && rule.required) {
+      if (value.trim().length === 0 && rule.required) {
         valid = false;
         message = "จำเป็นต้องกรอก";
       }
@@ -185,7 +185,7 @@ export default {
   #login-logo{
     width: 100%;
     height: 200px;
-    object-fit: cover;  
+    object-fit: scale-down;  
   }
   .card{
     max-width: 450px;
