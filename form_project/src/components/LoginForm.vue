@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" >
     <div class="row mt-3">
       <div class="row sm-4">
         <form id="app" @submit.prevent="loginFormSubmit">
@@ -13,6 +13,7 @@
               class="form-control"
               v-model="username"
             />
+            <div class="valid-feedback">โปรดกรอกชื่อผู้ใช้งาน</div>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
@@ -24,19 +25,20 @@
               class="form-control"
               v-model="password"
             />
+            <div class="valid-feedback">รหัสต้องยาวเกินกว่า 6 ตัวอักษร</div>
           </div>
           <button type="submit" class="btn btn-primary my-1">Login</button>
         </form>
       </div>
     </div>
     <div class="row mt-3">
-        username:
-        <span class="text-info ml-1">{{username}}</span>
+      username:
+      <span class="text-info ml-1">{{ username }}</span>
     </div>
     <div class="row">
-         password:
-        <span class="text-warning ml-1">{{password}}</span>
-    </div>  
+      password:
+      <span class="text-warning ml-1">{{ password }}</span>
+    </div>
   </div>
 </template>
 
@@ -51,7 +53,7 @@ export default {
   },
   method: {
     loginFormSubmit() {
-      console.log(`$(this.username) $(this.password)`);
+      console.log(`${this.username} ${this.password}`);
     },
   },
 };
