@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app" class="p-5">
+       <btn-count></btn-count>
+       <br><br>  
+       <select-weekday></select-weekday>  
+    </div>
+    <script>
+        const app = Vue.createApp({})
+        app.component('btn-count',{
+            data(){
+                return{
+                    count:0
+                }
+            },
+            template:`
+                <div>
+                    <button @click="count++">Click Count: {{count}}</button>
+                </div>
+            `
+        })
+        app.component('select-weekday',{
+            data(){
+                return{
+                    day:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+                    selectedDay:''
+                }
+            },
+            methods:{
+                showDay(){
+                    alert(this.selectedDay)
+                }
+            },
+            template:`
+                <select class="form-select" @change="showDay" v-model="selectedDay">
+                    <option v-for="d in day " :value="d">{{d}}</option>
+                </select>
+            `
+        })
+        
+        
+        app.mount("#app")
+    </script>
+</body>
+</html>

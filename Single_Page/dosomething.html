@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app" class="p-3">
+        <span>One</span>
+        <hl></hl>
+        <button @click="button_click">Click</button>
+        <hl></hl>
+    
+    <script>
+        const app = Vue.createApp({ 
+            methods:{
+                button_click(event){
+                    alert(`
+                    type: ${event.type}\n 
+                    tag: ${event.target.tagName}
+                    text: ${event.target.innerText}
+                    `)
+                }
+            }
+        })
+
+        app.component('hl', {
+            template: `
+                <div style="margin: 10px 0 10px; border-top: dashed 1px gray;"></div>
+            `
+        })
+    
+        app.mount('#app')
+    </script>
+</body>
+</html>

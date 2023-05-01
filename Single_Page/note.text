@@ -1,0 +1,19 @@
+const app = Vue.createApp({}) //Vue Instance
+
+const comObj={
+    template:'....'   //องค์ประกอบcomponent
+}
+
+app.component("ชื่อcomponent",comObj)    //กำหนดcomponentให้แก่ Vue Instance
+
+
+
+//หรือเขียนรวบลัด
+
+app.component("ชื่อcomponent",const comObj={
+    template:'....'   //องค์ประกอบcomponent
+})
+
+
+
+app.mount('#app_id')
